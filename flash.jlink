@@ -1,0 +1,8 @@
+device RP2040_M0_0
+si 1
+speed auto
+r
+h
+loadbin firmware.bin,0x10000000
+r
+qc
