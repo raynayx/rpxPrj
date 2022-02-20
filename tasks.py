@@ -15,6 +15,7 @@ def debug(c):
         c.run("JLinkGDBServer -select USB=801031598 -device RP2040_M0_1 -endian little -if SWD -speed 4000 \
                                 -ir -noLocalhostOnly -nologtofile &",pty=True)
         c.run("arm-none-eabi-gdb {}".format(EXE),pty=True)
+        c.run('kill $(pgrep JLinkGDBServer)',pty=True)
 
 
 @task
