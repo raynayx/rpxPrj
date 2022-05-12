@@ -1,11 +1,19 @@
 #!/bin/sh
-if [ "${BASH_SOURCE-}" = "$0" ]; then
-    echo "You must source this script: \$ source $0" >&2
-    exit 33
-fi
 
 PURPLE='\033[0;35m'
 NC='\033[0m' # No Color
+
+if [ "${BASH_SOURCE-}" = "$0" ]; then
+    echo -e "You must source this script:${PURPLE} \$ source $0${NC}" >&2
+    exit 33
+fi
+
+if [ -d "v" ]
+then
+    echo -e "Directory setup already. Run ${PURPLE}source start_env.sh${NC}"
+    return 0
+fi
+
 echo -e "${PURPLE}Setting up Virtual Env${NC}"
 virtualenv v
 echo -e "${PURPLE}Attempting activating venv${NC}"
