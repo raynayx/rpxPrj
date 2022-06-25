@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"aht21.h": "c"
+	},
+	"cortex-debug.variableUseNaturalFormat": true
+}

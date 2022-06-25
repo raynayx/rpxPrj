@@ -1,0 +1,59 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"cwd": "${workspaceFolder}",
+			"executable": "./build/firmware.elf",
+			"name": "JLink RP2040",
+			"request": "launch",
+			"type": "cortex-debug",
+			"device": "RP2040_M0_0",
+			"runToEntryPoint": "main",
+			"showDevDebugOutput": "none",
+			"servertype": "jlink"
+		},
+		{
+			"name": "jlink-openocd RP2040",
+			"cwd": "${workspaceRoot}",
+			"executable": "./build/firmware.elf",
+			"request": "launch",
+			"type": "cortex-debug",
+			"servertype": "openocd",
+			"interface": "swd",
+			"configFiles": [
+				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/jlink.cfg",
+				"/home/aiti-kace/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
+			],
+			"searchDir": [],
+			"runToEntryPoint": "main",
+			"showDevDebugOutput": "none",
+			"openOCDPreConfigLaunchCommands": [
+				"transport select swd"
+			],
+			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+			"device": "rp2040",
+			"targetProcessor": 0
+		},
+		{
+			"name": "openOCD RP2040",
+			"cwd": "${workspaceFolder}",
+			"executable": "./build/build/firmware.elf",
+			"request": "launch",
+			"type": "cortex-debug",
+			"runToEntryPoint": "main",
+			"servertype": "openocd",
+			"configFiles": [
+				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/picoprobe.cfg",
+				"/home/aiti-kace/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
+				
+			],
+			"interface": "swd",
+			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+			"device": "rp2040",
+			"targetProcessor": 0
+		}
+	]
+}
