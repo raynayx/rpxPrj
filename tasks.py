@@ -44,4 +44,4 @@ def build(c):
 def flash(c):
     """Get ELF file and flash to device"""
     with c.cd(BUILD_DIR):
-       c.run("JLinkExe {}".format(FLASH_SCRIPT))
+       c.run("JLinkExe ../{}".format(FLASH_SCRIPT))

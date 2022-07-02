@@ -24,11 +24,15 @@ pip install invoke
 
 echo -e "${PURPLE}Checking if invoke installation was successful${NC}"
 invoke -V
-echo -e "${PURPLE}Creating src,build,test,docs and lib directories ${NC}"
-mkdir src/ build/ test/ lib docs/
 
-echo -e "${PURPLE}Creating initial files. ${NC}"
-touch src/main.c
-
-echo -e "${PURPLE}Initializing git repo. ${NC}"
-git init .
+if [ -d "src" ]
+then
+    return 0
+else
+    echo -e "${PURPLE}Creating src,build,test,docs and lib directories ${NC}"
+    mkdir src/ build/ test/ lib docs/
+    echo -e "${PURPLE}Creating initial files. ${NC}"
+    touch src/main.c
+    echo -e "${PURPLE}Initializing git repo. ${NC}"
+    git init .
+fi
