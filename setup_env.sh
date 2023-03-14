@@ -8,25 +8,9 @@ if [ "${BASH_SOURCE-}" = "$0" ]; then
     exit 33
 fi
 
-if [ -d "v" ]
+if [ -d "src" ] && [ -d "lib" ]
 then
-    echo -e "Directory setup already. Run ${PURPLE}source start_env.sh${NC}"
-    return 0
-fi
-
-echo -e "${PURPLE}Setting up Virtual Env${NC}"
-virtualenv v
-echo -e "${PURPLE}Attempting activating venv${NC}"
-source v/bin/activate
-
-echo -e "${PURPLE}Attempting Invoke installation${NC}"
-pip install invoke
-
-echo -e "${PURPLE}Checking if invoke installation was successful${NC}"
-invoke -V
-
-if [ -d "src" ]
-then
+    echo -e "Directory setup already. Run ${PURPLE}conda activate env_name${NC} to enable using ${PURPLE}invoke${NC}"
     return 0
 else
     echo -e "${PURPLE}Creating src,build,test,docs and lib directories ${NC}"

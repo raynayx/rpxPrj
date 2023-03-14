@@ -23,15 +23,18 @@ fi
 if [ -d "${DIR_NAME}" ]
 then
 	cd ${SCRIPT_DIR}/
-	echo -e "${PURPLE}Copying resources into: ${DIR_LOC}/${DIR_NAME}.${NC}"
+	echo -e "${PURPLE}Copying resources into: ${DIR_LOC}/${DIR_NAME}/.${NC}"
+	
+
+
+	cp CMakeLists.txt ${DIR_LOC}/${DIR_NAME}/
+	cp -R .vscode ${DIR_LOC}/${DIR_NAME}/
+
 
 	cp flash.jlink ${DIR_LOC}/${DIR_NAME}/
-	cp pico_sdk_import.cmake ${DIR_LOC}/${DIR_NAME}/
 	cp setup_env.sh ${DIR_LOC}/${DIR_NAME}/
-	cp start_env.sh ${DIR_LOC}/${DIR_NAME}/
 	cp tasks.py ${DIR_LOC}/${DIR_NAME}/
-	cp CMakeLists.txt ${DIR_LOC}/${DIR_NAME}/
-	cp -r .vscode ${DIR_LOC}/${DIR_NAME}/
+	
 	cd ${DIR_LOC}/
 else
     echo -e "${PURPLE}Project directory: ${DIR_NAME} not found. Exitting...${NC}"

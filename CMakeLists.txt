@@ -3,16 +3,16 @@ cmake_minimum_required(VERSION 3.13)
 # initialize the SDK based on PICO_SDK_PATH
 # note: this must happen before project()
 set(PICO_SDK_PATH ~/opt/pico-sdk)
-# set(PICO_BOARD seeed_xiao_rp2040)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 set(CMAKE_BUILD_TYPE Debug)
+
+#turn off compiler optimization
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 #set(LINKER_SCRIPT memmap_mod.ld)
 set(MY_TARGET firmware)
 
 
-include(pico_sdk_import.cmake)
+include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
 project(my_project)
 
@@ -22,7 +22,6 @@ pico_sdk_init()
 # rest of your project
 add_executable(${MY_TARGET}
    src/main.c
-
 )
 
 #Enable printing over USB and disable printing over UART
@@ -32,7 +31,10 @@ pico_enable_stdio_uart(${MY_TARGET} 0)
 
 # Add pico_stdlib library which aggregates commonly used features
 target_link_libraries(${MY_TARGET} pico_stdlib hardware_gpio 
-hardware_uart)
+hardware_uart
+
+)
+
 
 
 target_include_directories(${MY_TARGET} PUBLIC lib)

@@ -38,22 +38,46 @@
 			"targetProcessor": 0
 		},
 		{
-			"name": "openOCD RP2040",
+			"name": "lin_openOCD RP2040",
 			"cwd": "${workspaceFolder}",
-			"executable": "./build/build/firmware.elf",
+			"executable": "./build/firmware.elf",
 			"request": "launch",
 			"type": "cortex-debug",
 			"runToEntryPoint": "main",
 			"servertype": "openocd",
 			"configFiles": [
-				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/picoprobe.cfg",
+				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/cmsis-dap.cfg",
 				"/home/aiti-kace/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
 				
 			],
 			"interface": "swd",
 			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
 			"device": "rp2040",
-			"targetProcessor": 0
+			"targetProcessor": 0,
+			"openOCDLaunchCommands": [
+				"adapter speed 5000"
+			  ]
+		},
+		{
+			"name": "win_openOCD RP2040",
+			"cwd": "${workspaceFolder}",
+			"executable": "./build/firmware.elf",
+			"request": "launch",
+			"type": "cortex-debug",
+			"runToEntryPoint": "main",
+			"servertype": "openocd",
+			"configFiles": [
+				"C:\\Program Files\\Raspberry Pi\\Pico SDK v1.5.0\\openocd\\scripts\\interface\\cmsis-dap.cfg",
+				"C:\\Program Files\\Raspberry Pi\\Pico SDK v1.5.0\\openocd\\scripts\\target\\rp2040.cfg"
+			],
+			"interface": "swd",
+			"svdFile": "C:\\Program Files\\Raspberry Pi\\Pico SDK v1.5.0\\pico-sdk\\src\\rp2040\\hardware_regs\\rp2040.svd",
+			"device": "rp2040",
+			"targetProcessor": 0,
+			"openOCDLaunchCommands": [
+				"adapter speed 5000"
+			  ]
 		}
+		
 	]
 }
