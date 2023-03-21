@@ -13,7 +13,8 @@
 			"device": "RP2040_M0_0",
 			"runToEntryPoint": "main",
 			"showDevDebugOutput": "none",
-			"servertype": "jlink"
+			"servertype": "jlink",
+			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
 		},
 		{
 			"name": "jlink-openocd RP2040",
