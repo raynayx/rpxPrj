@@ -6,14 +6,13 @@ When using JLink, install JLink server
 When using openOCD, install openocd server
 
 ## Windows
-If PowerShell execution is disabled, run:
-    `Set-ExecutionPolicy RemoteSigned` in a PowerShell terminal with 
-    administrative privilleges
-
+- If PowerShell execution is disabled, run:
+    `Set-ExecutionPolicy RemoteSigned` in a PowerShell terminal with administrative privilleges
+- 
 
 
 ## Linux
 
-Install conda
-Create conda environment
-Install invoke
+- Install conda
+- Create conda environment and activate it
+- Install invoke

@@ -8,6 +8,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 #turn off compiler optimization
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
+set (PICO_DEOPTIMIZED_DEBUG 1)
 #set(LINKER_SCRIPT memmap_mod.ld)
 set(MY_TARGET firmware)
 
@@ -41,7 +42,8 @@ target_include_directories(${MY_TARGET} PUBLIC lib)
 
 
 # Use custom linker script
-#pico_set_linker_script(${MY_TARGET} ${LINKER_SCRIPT})
+# pico_set_linker_script(${MY_TARGET} ${CMAKE_CURRENT_SOURCE_DIR}/src/${LINKER_SCRIPT})
+
 
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(${MY_TARGET})
