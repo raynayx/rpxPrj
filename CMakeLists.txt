@@ -7,11 +7,16 @@ set(PICO_SDK_PATH ~/opt/pico-sdk)
 set(CMAKE_BUILD_TYPE Debug)
 
 #turn off compiler optimization
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
+#set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 set (PICO_DEOPTIMIZED_DEBUG 1)
 #set(LINKER_SCRIPT memmap_mod.ld)
 set(MY_TARGET firmware)
 
+add_compile_options(-Wall
+        -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
+        -Wno-unused-function # we have some for the docs that aren't called
+        -O0
+        )
 
 include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
