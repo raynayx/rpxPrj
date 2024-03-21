@@ -1,4 +1,5 @@
 http://www.segger.com/jlink-software.html
+https://wiki.segger.com/index.php?title=J-Link_Commander
 
 Available commands are:
 ----------------------
