@@ -31,6 +31,10 @@ ClrWP      Clear watchpoint. Syntax: ClrWP  <WP_Handle>
 VCatch     Write vector catch. Syntax: VCatch <Value>
 loadbin    Load binary file into target memory.
              Syntax: loadbin <filename>, <addr>
+
+loadfile    Load file of other format into target memory.
+             Syntax: loadfile <filename.type>, <addr>
+
 SetPC      Set the PC to specified value. Syntax: SetPC <Addr>
 le         Change to little endian mode
 be         Change to big endian mode
