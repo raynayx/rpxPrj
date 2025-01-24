@@ -11,14 +11,24 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 
 #turn off compiler optimization
+<<<<<<< HEAD
 set(CMAKE_BUILD_TYPE Debug)
 # set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 # set (PICO_DEOPTIMIZED_DEBUG 1)
 
 
+=======
+#set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
+set (PICO_DEOPTIMIZED_DEBUG 1)
+>>>>>>> 5ec049c9d9d5d639009a4cbd054fd4c3612ad637
 #set(LINKER_SCRIPT memmap_mod.ld)
 set(MY_TARGET firmware)
 
+add_compile_options(-Wall
+        -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
+        -Wno-unused-function # we have some for the docs that aren't called
+        -O0
+        )
 
 
 include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
