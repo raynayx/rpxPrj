@@ -31,7 +31,7 @@ def clean(c):
     if os.name == 'nt':
         c.run("DEL /F /A /Q  build")
     else:
-        c.run("rm -rf build/*".format(EXE)) 
+        c.run("rm -rf build/") 
     
 @task
 def test(c):
@@ -40,8 +40,10 @@ def test(c):
 @task
 def cmake(c):
     """Generate Makefile from CMakefile"""
+    if not (os.path.exists(BUILD_DIR)):
+        c.run("mkdir -p {}".format(BUILD_DIR))
     with c.cd(BUILD_DIR):
-        c.run("cmake ..")
+        c.run("cmake -G Ninja ..")
 
 @task(pre=[cmake])
 def build(c):
@@ -50,7 +52,7 @@ def build(c):
         if os.name == 'nt':
             c.run("ninja -j4")
         else:
-            c.run("make -j4")
+            c.run("ninja -j32")
 
 @task(pre=[build])
 def flash(c):
