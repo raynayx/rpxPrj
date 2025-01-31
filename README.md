@@ -48,6 +48,8 @@ You can therefore run `inv flash` without running `inv build` first. Invoke will
 ### Visual debugging with VS Code(Cortex Debug extension)
 - Click on the `Run and Debug` button
 - Click on the `Start Debugging` button or press `F5`
+- Show here:
+- ![Cortex-debug demo](https://github.com/user-attachments/assets/1d022889-8f8c-42bd-8c4a-9c33c71aed86)
 
 
 <!-- # Windows
