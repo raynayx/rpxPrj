@@ -4,7 +4,7 @@ If you're setting up the by hand, be sure to check the following prerequisites:
     - When using openOCD, install openocd server
 - (optional) Install [Invoke](https://www.pyinvoke.org/installing.html), inside a Python environment(recommended) or globally.  
 
-If you're using the [RPX]() docker image all these would have been setup.
+If you're using the [RPX](https://github.com/raynayx/rpxContainer) docker image all these would have been setup.
 
 ## Linux
 ### Creating a new project
