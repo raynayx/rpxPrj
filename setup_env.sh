@@ -10,7 +10,11 @@ fi
 
 if [ -d "src" ] && [ -d "lib" ]
 then
-    echo -e "Directory setup already. Run ${PURPLE}conda activate env_name${NC} to enable using ${PURPLE}invoke${NC}"
+    echo -e "Directory setup already. \
+    Run ${PURPLE}conda activate env_name${NC} \
+    to enable using ${PURPLE}invoke${NC}\
+    OR You can use ${PURPLE}Invoke${NC} if it already exists in the 
+    system path"
     return 0
 else
     echo -e "${PURPLE}Creating src,build,test,docs and lib directories ${NC}"

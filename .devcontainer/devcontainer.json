@@ -1,0 +1,20 @@
+{
+    "build":{"dockerfile": "../../../my_containers/RP2XXX/Dockerfile"},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.vscode-serial-monitor",
+                "trond-snekvik.gnu-mapfiles",
+                "ZixuanWang.linkerscript",
+                "ms-vscode.vscode-embedded-tools",
+                "mcu-debug.debug-tracker-vscode",
+                "marus25.cortex-debug",
+                "mcu-debug.peripheral-viewer",
+                "mcu-debug.rtos-views"
+            ]
+        }
+    },
+    "mounts": ["type=bind,src=/dev/bus/usb,dst=/dev/bus/usb"],
+    "runArgs": ["--privileged"]
+}

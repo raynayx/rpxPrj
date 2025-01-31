@@ -30,6 +30,8 @@ If((Test-Path -Path $DIR_NAME))
 
     Copy-Item -Path .\.vscode -Destination $DIR_LOC\$DIR_NAME -Recurse
 
+    Copy-Item -Path .\.devcontainer -Destination $DIR_LOC\$DIR_NAME -Recurse
+
     cd $DIR_LOC
 }
 Else

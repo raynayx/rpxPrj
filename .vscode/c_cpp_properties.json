@@ -1,0 +1,17 @@
+{
+    "configurations": [
+                {
+            "name": "arm-none-setup",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "~/opt/pico-sdk/**"
+            ],
+            "defines": [],
+            "compilerPath": "~/opt/arm-none-eabi/bin/arm-none-eabi-g++",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

@@ -13,7 +13,7 @@ DIR_LOC=$(pwd)
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 if [ $# = 0 ]; then
-    echo -e "${PURPLE}You must supply the name of the directory to be created:${NC}" >&2
+    echo -e "${PURPLE}You must supply the name of the project directory to be created:${NC}" >&2
 else
 
     echo -e "${PURPLE}Creating project directory: ${DIR_NAME}.${NC}"
@@ -29,7 +29,7 @@ then
 
 	cp CMakeLists.txt ${DIR_LOC}/${DIR_NAME}/
 	cp -R .vscode ${DIR_LOC}/${DIR_NAME}/
-
+	cp -R .devcontainer ${DIR_LOC}/${DIR_NAME}/
 
 	cp flash.jlink ${DIR_LOC}/${DIR_NAME}/
 	cp setup_env.sh ${DIR_LOC}/${DIR_NAME}/

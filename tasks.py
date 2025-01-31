@@ -13,14 +13,13 @@ BUILD_DIR = os.path.join("./build")
 EXE="firmware.elf"
 FLASH_SCRIPT="flash.jlink"
 DEBUG_SCRIPT="debug.jlink"
-JLINK_ID=""
 
 @task
 def debug(c):
     """Debug with J-Link Edu Mini"""
     with c.cd("build"):
-        c.run("JLinkGDBServer -select USB={} -device RP2040_M0_1 -endian little -if SWD -speed 4000 \
-                                -ir -noLocalhostOnly -nologtofile".format(JLINK_ID),pty=True)
+        c.run("JLinkGDBServer  -device RP2040_M0_1 -endian little -if SWD \
+              -speed 4000 -ir -noLocalhostOnly -nologtofile",pty=True)
         # c.run("arm-none-eabi-gdb {}".format(EXE),pty=True)
         # c.run('kill $(pgrep JLinkGDBServer)',pty=True)
 
@@ -50,9 +49,9 @@ def build(c):
     """Build the project"""
     with c.cd(BUILD_DIR):
         if os.name == 'nt':
-            c.run("ninja -j4")
+            c.run("ninja -j16")
         else:
-            c.run("ninja -j32")
+            c.run("ninja -j16")
 
 @task(pre=[build])
 def flash(c):

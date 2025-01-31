@@ -14,7 +14,7 @@
 			"runToEntryPoint": "main",
 			"showDevDebugOutput": "none",
 			"servertype": "jlink",
-			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+			"svdFile": "~/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
 		},
 		{
 			"name": "jlink-openocd RP2040",
@@ -25,8 +25,8 @@
 			"servertype": "openocd",
 			"interface": "swd",
 			"configFiles": [
-				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/jlink.cfg",
-				"/home/aiti-kace/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
+				"~/opt/openOCD_pico/tcl/interface/jlink.cfg",
+				"~/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
 			],
 			"searchDir": [],
 			"runToEntryPoint": "main",
@@ -34,7 +34,7 @@
 			"openOCDPreConfigLaunchCommands": [
 				"transport select swd"
 			],
-			"svdFile": "/home/aiti-kace/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+			"svdFile": "~/opt/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
 			"device": "rp2040",
 			"targetProcessor": 0
 		},
@@ -47,8 +47,8 @@
 			"runToEntryPoint": "main",
 			"servertype": "openocd",
 			"configFiles": [
-				"/home/aiti-kace/opt/openOCD_pico/tcl/interface/cmsis-dap.cfg",
-				"/home/aiti-kace/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
+				"~/opt/openOCD_pico/tcl/interface/cmsis-dap.cfg",
+				"~/opt/openOCD_pico/tcl/target/rp2040_mod.cfg",
 				
 			],
 			"interface": "swd",
