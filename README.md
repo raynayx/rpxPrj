@@ -20,6 +20,14 @@ to setup the project directory structure:
 source ./setup_env.sh
 ```
 
+An example is shown here:
+<video src="https://github.com/user-attachments/assets/b9e21091-6f66-4a28-a441-bed802aba50b" controls="controls"">
+</video>
+
+
+
+
+
 ## VS Code Dev Container
 - Be sure to setup Docker as required for your platform.
 - Install the `dev container by Microsoft` or the `Remote dev pack` extensions in VS Code.
