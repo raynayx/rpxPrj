@@ -40,7 +40,8 @@ An example is shown here:
 prompt you to build it.
 - Be sure to point the `dockerfile` key in the `devcontainer.json` file to the location of the [RPX `Dockerfile`](https://github.com/raynayx/rpxContainer) on your computer.
 - The dev container extension will build the image, and open your project in the reloaded the VS Code window.
-
+  This is shown below:
+  <video src="https://github.com/user-attachments/assets/728f1906-61d2-47b6-a99f-e663b43b28cf" controls="controls"></video>
 
 ### Building the project
 To build the project, run the following Invoke commands defined in the `tasks.py` file in the root of the project directory:
