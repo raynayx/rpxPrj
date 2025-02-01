@@ -21,8 +21,7 @@ source ./setup_env.sh
 ```
 
 An example is shown here:
-<video src="https://github.com/user-attachments/assets/b9e21091-6f66-4a28-a441-bed802aba50b" controls="controls"">
-</video>
+<video src="https://github.com/user-attachments/assets/b9e21091-6f66-4a28-a441-bed802aba50b" controls="controls"></video>
 
 
 
