@@ -1,10 +1,18 @@
+# Raspberry Pi RP2040 and RP2350 series project setup scripts
+## About
+This repo contains resources and scripts to create a project directory for building firmware for the RP2040 and RP2350 series MCUs.
+
+You can use the [RPX](https://github.com/raynayx/rpxContainer) docker image where all the prerequisites would have been setup for you.
+In that case, go [here](#linux).
+
+### Prerequisites
 If you're setting up the environment by hand, be sure to check the following prerequisites:
 - Install arm-none-eabi toolchain,cmake, ninja, git
+- Install the `pico-sdk` and point the `CMakeLists.txt` file to it.
 - When using JLink, install JLink server 
     - When using openOCD, install openocd server
 - (optional) Install [Invoke](https://www.pyinvoke.org/installing.html), inside a Python environment(recommended) or globally.  
 
-If you're using the [RPX](https://github.com/raynayx/rpxContainer) docker image all these would have been setup.
 
 # Linux
 ### Creating a new project
@@ -52,7 +60,7 @@ You can therefore run `inv flash` without running `inv build` first. Invoke will
 ### Visual debugging with VS Code(Cortex Debug extension)
 - Click on the `Run and Debug` button
 - Click on the `Start Debugging` button or press `F5`
-- Show here:
+- Shown here:
 <video src="https://github.com/user-attachments/assets/1d022889-8f8c-42bd-8c4a-9c33c71aed86" controls="controls"></video>
 
 <!-- # Windows
