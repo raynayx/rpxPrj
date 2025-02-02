@@ -14,7 +14,9 @@ If you're setting up the environment by hand, be sure to check the following pre
 - (optional) Install [Invoke](https://www.pyinvoke.org/installing.html), inside a Python environment(recommended) or globally.  
 
 
-# Linux
+# Linux or Windows Subsystem for Linux(WSL2)
+If you're on WSL2, run the following inside WSL2.
+
 ### Creating a new project
 Run the following in the bash terminal to create a new project:
 ```bash
