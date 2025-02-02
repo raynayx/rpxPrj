@@ -2,7 +2,7 @@
 ## About
 This repo contains resources and scripts to create a project directory for building firmware for the RP2040 and RP2350 series MCUs.
 
-You can use the [RPX](https://github.com/raynayx/rpxContainer) docker image where all the prerequisites would have been setup for you.
+You can use the [RPX](https://github.com/raynayx/rpxContainer) docker image where the prerequisites listed below are already set up for you.
 In that case, go [here](#linux).
 
 ### Prerequisites
