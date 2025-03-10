@@ -53,8 +53,17 @@ def build(c):
         else:
             c.run("ninja -j16")
 
+
+@task(pre=[build])
+def size(c):
+    """Show size of the built binary file"""
+    with c.cd(BUILD_DIR):
+        c.run("clear")
+        c.run("arm-none-eabi-size -Axt {}".format(EXE))
+
 @task(pre=[build])
 def flash(c):
     """Get ELF file and flash to device"""
     with c.cd(BUILD_DIR):
        c.run("JLinkExe ../{}".format(FLASH_SCRIPT))
+       c.run("arm-none-eabi-size {}".format(EXE))
