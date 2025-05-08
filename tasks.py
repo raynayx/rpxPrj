@@ -66,4 +66,4 @@ def flash(c):
     """Get ELF file and flash to device"""
     with c.cd(BUILD_DIR):
        c.run("JLinkExe ../{}".format(FLASH_SCRIPT))
-       c.run("arm-none-eabi-size {}".format(EXE))
+       c.run("arm-none-eabi-size -G {}".format(EXE))
